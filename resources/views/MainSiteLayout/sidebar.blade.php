@@ -2,7 +2,7 @@
     <div class="main-menu">
         <div class="scroll">
             <ul class="list-unstyled">
-                <li class="active">
+                <li class="{{Request::is('app/dashboard') ? 'active' : '' }}">
                     <a href="{{ url('app/dashboard') }}">
                         <i class="simple-icon-home"></i>
                         <span>Home</span>
@@ -23,8 +23,8 @@
                         <i class="iconsminds-financial"></i> Funds
                     </a>
                 </li>
-                <li>
-                    <a href="#bureau">
+                <li class="{{Request::is('app/bureau/add-request') ? 'active' : '' }}">
+                    <a href="#bureau" >
                         <i class="iconsminds-family-sign"></i> Bureau
                     </a>
                 </li>
@@ -188,12 +188,12 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="simple-icon-user-female"></i> <span class="d-inline-block">Querry Women's Data</span>
+                                    <i class="simple-icon-user-female"></i><span class="d-inline-block">Querry Women's Data</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <i class="iconsminds-add-user"></i> <span class="d-inline-block">Add Your Data</span>
+                            <li class="{{Request::is('app/bureau/add-request') ? 'active' : '' }}">
+                                <a href="{{url('/app/bureau/add-request')}}">
+                                    <i class="iconsminds-add-user"></i><span class="d-inline-block">Add Your Data</span>
                                 </a>
                             </li>
                 
