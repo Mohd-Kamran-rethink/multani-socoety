@@ -1,3 +1,8 @@
+@php
+  $currentUser = json_decode(Cookie::get('user'));
+@endphp
+
+
 <nav class="navbar fixed-top">
     <div class="d-flex align-items-center navbar-left">
         <a href="#" class="menu-button d-none d-md-block">
@@ -158,7 +163,7 @@
         <div class="user d-inline-block">
             <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
-                <span class="name">Sarah Kortney</span>
+                <span class="name">{{$currentUser->name}}</span>
                 <span>
                     <img alt="Profile Picture" src="{{ asset('MainTheme/img/profiles/l-1.jpg') }}" />
                 </span>
@@ -169,7 +174,7 @@
                 <a class="dropdown-item" href="#">Features</a>
                 <a class="dropdown-item" href="#">History</a>
                 <a class="dropdown-item" href="#">Support</a>
-                <a class="dropdown-item" href="#">Sign out</a>
+                <a class="dropdown-item" href="{{url('/app/logout')}}">Sign out</a>
             </div>
         </div>
     </div>

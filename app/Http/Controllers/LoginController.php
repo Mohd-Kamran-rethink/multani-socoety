@@ -34,4 +34,9 @@ class LoginController extends Controller
             }
         }
     }
+    public function logout()
+    {
+        return redirect('/app/login')->withCookie(Cookie::forget('user'));
+
+    }
 }

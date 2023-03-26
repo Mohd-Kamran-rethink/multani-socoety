@@ -3704,7 +3704,7 @@ $.dore = function (element, options) {
                 url: "/app/upload",
                 init: function () {
                     this.on("success", function (file, responseText) {
-                        console.log(file);
+                        console.log(file)
                     });
                 },
                 thumbnailWidth: 160,

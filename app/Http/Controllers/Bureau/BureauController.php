@@ -5,18 +5,23 @@ namespace App\Http\Controllers\Bureau;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Laqab;
+use App\Models\People ;
 use App\Models\State;
 use App\Models\Qualification;
+use Illuminate\Support\Facades\Cookie;
+
 
 class BureauController extends Controller
 {
     public function add()
     {
+        $currentUser= json_decode(Cookie::get('user'));
         $states=State::where("country_id",'=','101')->orderBy('name','asc')->get();
         $laqabs=Laqab::orderBy('laqab','asc')->get();
         $qualifications=Qualification::orderBy('title','asc')->get();
+        $userData=People::where('phone','=',$currentUser->phone)->where('app_registered','=','Yes')->first();
         
-        return view('MainSite.Bureau.add',compact('states','laqabs','qualifications'));
+        return view('MainSite.Bureau.add',compact('states','laqabs','qualifications','userData'));
     }
     public function upload(Request $req)
     {

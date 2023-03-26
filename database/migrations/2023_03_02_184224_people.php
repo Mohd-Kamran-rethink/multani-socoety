@@ -13,13 +13,14 @@ class People extends Migration
      */
     public function up()
     {
-        Schema::create('peoples', function (Blueprint $table) {
+        Schema::create('people', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
             $table->string('profile_picture')->nullable();
             $table->string('dob')->nullable();
             $table->string('education')->nullable();
-            $table->string('phone')->nullable();
+            $table->string('phone');
+            $table->string('passwword');
             $table->string('email')->nullable();
             $table->string('laqab_id')->nullable();
             $table->enum('isOnline',["Yes","No"])->default("No");

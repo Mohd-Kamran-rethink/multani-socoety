@@ -39,6 +39,7 @@ Route::post('admin/people/import', [PeoplePeople::class, 'import'])->name('impor
 
 Route::get('/app/login', [MainSiteController::class, 'login'])->name('login');
 Route::post('/app/login', [LoginController::class, 'login'])->name('login');
+Route::get('/app/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/app/register', [MainSiteController::class, 'register'])->name('register');
 
 Route::get('/app/dashboard', [MainSiteController::class, 'dashboard'])->name('dashboard')->middleware('userCheck');

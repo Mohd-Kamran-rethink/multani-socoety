@@ -1,3 +1,16 @@
+/* custom css */
+
+.custom-dropzone{
+  min-height: 115px!important;
+    border: 1px solid #d7d7d7!important;
+    background: #fff!important;
+    padding: 10px!important;
+    border-radius: 0.1rem!important;
+    color: #3a3a3a!important;
+    height: auto!important;
+}
+
+/* custom css ends */
 html {
   width: 100%;
 }

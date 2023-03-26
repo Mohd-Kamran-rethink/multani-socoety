@@ -11,7 +11,7 @@
             <div class="dashboard-wrapper">
                 <div class="row">
                     <div class="col-12">
-                        <h1 class="font-weight-bold">Add a profile.</h1>
+                        <h1 class="font-weight-bold">Complete your profile.</h1>
 
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                                     <label>Full Name <span class="text-danger">*</span></label>
                                     <div class="mb-3 input-group">
                                         
-                                        <input name="name" placeholder="Zohaib Ahmed" type="text"
+                                        <input value="{{$userData->name}}" disabled name="name" placeholder="Zohaib Ahmed" type="text"
                                             class="form-control mb-0 pb-0">
                                     </div>
                                     @error('name')
@@ -44,7 +44,7 @@
                                     </div>
                                     <label>Phone<span class="text-danger">*</span></label>
                                         <div class="mb-3 input-group">
-                                        <input name="phone" placeholder="90000000000" type="number" class="form-control">
+                                        <input name="phone" value="{{$userData->phone}}" disabled  placeholder="90000000000" type="number" class="form-control">
                                     </div>
                                         @error('phone')
                                             <span class="text-danger">{{ $message }}</span>
@@ -121,11 +121,7 @@
                                         @error('gender')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
-                                    <div class="mb-3 mt-3">
-                                        <div class="dropzone">
-
-                                        </div>
-                                    </div>
+                                    
                                     <div class="form-group mb-3">
                                         <label for="" class="m-0">Want to add more?</label>
                                         <textarea rows="3" name="add_more" class="form-control" placeholder="I am currently doing....."></textarea>
