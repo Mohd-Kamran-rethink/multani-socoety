@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 
@@ -9,6 +10,9 @@ class MainSiteController extends Controller
 {
    public function login()
    {
+       Cache::flush(); // Clears the cache
+      
+
       if( Cookie::get('user'))
         {
            return redirect('app/dashboard');
