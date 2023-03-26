@@ -1,10 +1,16 @@
 @extends('MainSite.index')
 @section('content')
+@php
+     $userData= json_decode(Cookie::get('user'));
+@endphp
+
+
 <style>
     .input-group{margin-bottom: 0 !important}
     .form-group{margin-bottom: 0 !important}
     label{margin-top: 15px}
     .custom-control-label{margin: 0;margin-bottom:10px }
+
 </style>
     <main>
         <div class="container-fluid">
@@ -69,7 +75,7 @@
                                         <label>Cities <span class="text-danger">*</span></label>
                                         <select name="city" class="form-control select2-single" data-width="100%">
                                             <option value="0">--Choose--</option>
-                                            <option value="">item->name </option>
+                                            <option value="">itemname </option>
 
                                         </select>
                                     </div>
