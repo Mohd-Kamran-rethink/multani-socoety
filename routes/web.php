@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Bureau\BureauController;
 use App\Http\Controllers\Laqabs\laqabs;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainSiteController;
@@ -41,3 +42,13 @@ Route::post('/app/login', [LoginController::class, 'login'])->name('login');
 Route::get('/app/register', [MainSiteController::class, 'register'])->name('register');
 
 Route::get('/app/dashboard', [MainSiteController::class, 'dashboard'])->name('dashboard')->middleware('userCheck');
+
+
+
+
+//                                          BUREAU ROUTES
+Route::get('/app/bureau/add-request', [BureauController::class, 'add'])->name('add')->middleware('userCheck');
+Route::post('/app/bureau/add-request', [BureauController::class, 'upload'])->name('upload')->middleware('userCheck');
+Route::post('/app/upload', [BureauController::class, 'uploadImage'])->name('uploadImage')->middleware('userCheck');
+
+                            

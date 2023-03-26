@@ -5,10 +5,10 @@ namespace App\Http\Controllers\People;
 use App\Models\People;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\cities;
-use App\Models\laqabsModel;
-use App\Models\pradesh;
-use App\Models\qualification;
+use App\Models\City;
+use App\Models\Laqab;
+use App\Models\State;
+use App\Models\Qualification;
 use Maatwebsite\Excel\Facades\Excel;
 
 class PeopleController extends Controller
@@ -20,16 +20,16 @@ class PeopleController extends Controller
     }
     public function addForm()
     {
-        $laqabs = laqabsModel::orderBy('laqab', 'ASC')->get();
-        $qualifications = qualification::orderBy('title', 'ASC')->get();
-        $states = pradesh::where('country_id', '=', '101')->orderBy('name', 'asc')->get();
+        $laqabs = Laqab::orderBy('laqab', 'ASC')->get();
+        $qualifications = Qualification::orderBy('title', 'ASC')->get();
+        $states = State::where('country_id', '=', '101')->orderBy('name', 'asc')->get();
 
         return view('Admin.People.add', compact('laqabs', 'qualifications', 'states'));
     }
     public function getList(Request $req)
     {
         if ($req->ajax()) {
-            $cities = cities::where('state_id', '=', $req->cityId)->orderBy('name', 'asc')->get();
+            $cities = City::where('state_id', '=', $req->cityId)->orderBy('name', 'asc')->get();
 
             $html = '
           <label for="exampleFormControlInput1" class="form-label">City</label>
