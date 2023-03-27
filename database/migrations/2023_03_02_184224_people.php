@@ -23,6 +23,8 @@ class People extends Migration
             $table->string('passwword');
             $table->string('email')->nullable();
             $table->string('laqab_id')->nullable();
+            $table->enum('is_profile_shared',["Yes","No"])->dfault("No");
+            $table->enum('bureau_image_type',["new","profile"])->default(Null);
             $table->enum('isOnline',["Yes","No"])->default("No");
             $table->enum('app_registered',["Yes","No"])->default("No");
             $table->timestamps();

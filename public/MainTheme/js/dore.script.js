@@ -3701,7 +3701,7 @@ $.dore = function (element, options) {
         /* 03.20. Dropzone */
         if ($().dropzone && !$(".dropzone").hasClass("disabled")) {
             $(".dropzone").dropzone({
-                url: "/app/upload",
+                url: "/app/bureau/photos/add",
                 init: function () {
                     this.on("success", function (file, responseText) {
                         console.log(file)

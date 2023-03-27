@@ -41,6 +41,7 @@ Route::get('/app/login', [MainSiteController::class, 'login'])->name('login');
 Route::post('/app/login', [LoginController::class, 'login'])->name('login');
 Route::get('/app/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/app/register', [MainSiteController::class, 'register'])->name('register');
+Route::get('/app/cities', [LoginController::class, 'getCities'])->name('getCities');
 
 Route::get('/app/dashboard', [MainSiteController::class, 'dashboard'])->name('dashboard')->middleware('userCheck');
 
@@ -50,6 +51,8 @@ Route::get('/app/dashboard', [MainSiteController::class, 'dashboard'])->name('da
 //                                          BUREAU ROUTES
 Route::get('/app/bureau/add-request', [BureauController::class, 'add'])->name('add')->middleware('userCheck');
 Route::post('/app/bureau/add-request', [BureauController::class, 'upload'])->name('upload')->middleware('userCheck');
-Route::post('/app/upload', [BureauController::class, 'uploadImage'])->name('uploadImage')->middleware('userCheck');
+Route::get('/app/bureau/photos/add', [BureauController::class, 'uploadImageForm'])->name('uploadImageForm')->middleware('userCheck');
+Route::post('/app/bureau/photos/add', [BureauController::class, 'uploadImage'])->name('uploadImage')->middleware('userCheck');
+Route::get('/completeProfile/{type}', [BureauController::class, 'completeProfile'])->name('completeProfile')->middleware('userCheck');
 
                             

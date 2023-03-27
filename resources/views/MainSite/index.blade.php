@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <script type="text/javascript">
+        BASE_URL = "<?php echo url(''); ?>";
+    </script>
     <meta charset="UTF-8">
     <title>Multani Society</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -89,6 +91,7 @@ body {
     <script src="{{ asset('MainTheme/js/vendor/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('MainTheme/js/vendor/glide.min.js') }}"></script>
     <script src="{{ asset('MainTheme/js/dore.script.js') }}"></script>
+    <script src="{{ asset('MainTheme/js/main.js') }}"></script>
     <script src="{{ asset('MainTheme/js/scripts.single.theme.js') }}"></script>
 
 </body>

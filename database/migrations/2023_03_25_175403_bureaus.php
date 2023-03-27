@@ -13,15 +13,18 @@ class Bureaus extends Migration
      */
     public function up()
     {
-        Schema::create('buearus', function (Blueprint $table) {
+        Schema::create('bureaus', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id');
             $table->string('full_name')->nullable();
             $table->string('dob')->nullable();
             $table->string('state_id')->nullable();
             $table->string('city_id')->nullable();
             $table->string('qualification_id')->nullable();
             $table->string('phone');
-            $table->string('add_mode')->nullable();
+            $table->string('laqab_id');
+            $table->string('add_more')->nullable();
+           
             $table->enum('gender',["Male","Female"]);
             $table->timestamps();
         });

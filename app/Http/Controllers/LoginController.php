@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\People;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -38,5 +39,23 @@ class LoginController extends Controller
     {
         return redirect('/app/login')->withCookie(Cookie::forget('user'));
 
+    }
+    public function getCities(Request $req)
+    {
+        $cities=City::where('state_id','=',$req->state_id)->orderBy('name',"asc")->get();
+       
+        $html='<label class="form-label" for="form3Example1n1">Cities</label>
+          <select class="form-select" onchange="getCityValue()" id="cityChange" name="cityName" >
+          <option value="0">--City--</option>
+          <option value="noCity">--NOT LISTED--</option>
+          ';
+         
+          foreach($cities as $city)
+         {
+          $html.= '<option value='.$city->id.'>'.$city->name.'</option>';
+         } 
+        '</select>';
+        return $html;
+    
     }
 }
