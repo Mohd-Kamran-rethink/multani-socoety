@@ -20,7 +20,7 @@ class People extends Migration
             $table->string('dob')->nullable();
             $table->string('education')->nullable();
             $table->string('phone');
-            $table->string('passwword');
+            $table->string('password');
             $table->string('email')->nullable();
             $table->string('laqab_id')->nullable();
             $table->enum('is_profile_shared',["Yes","No"])->dfault("No");
