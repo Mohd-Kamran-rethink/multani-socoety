@@ -49,6 +49,7 @@ Route::get('/app/dashboard', [MainSiteController::class, 'dashboard'])->name('da
 
 
 //                                          BUREAU ROUTES
+Route::get('/app/bureau', [BureauController::class, 'landingPage'])->name('landingPage')->middleware('userCheck');
 Route::get('/app/bureau/add-request', [BureauController::class, 'add'])->name('add')->middleware('userCheck');
 Route::post('/app/bureau/add-request', [BureauController::class, 'upload'])->name('upload')->middleware('userCheck');
 Route::get('/app/bureau/photos/add', [BureauController::class, 'uploadImageForm'])->name('uploadImageForm')->middleware('userCheck');

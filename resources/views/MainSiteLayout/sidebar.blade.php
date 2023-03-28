@@ -29,7 +29,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#menu">
+                    <a href="#">
                         <i class="iconsminds-engineering"></i> Members
                     </a>
                 </li>
@@ -132,22 +132,22 @@
                         <ul class="list-unstyled inner-level-menu">
                             <li>
                                 <a href="Ui.Forms.Components.html">
-                                    <i class="simple-icon-event"></i> <span class="d-inline-block">For Society</span>
+                                    <i class="iconsminds-handshake"></i> <span class="d-inline-block">For Society</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="Ui.Forms.Layouts.html">
-                                    <i class="simple-icon-doc"></i> <span class="d-inline-block">For Poors</span>
+                                    <i class="iconsminds-financial"></i> <span class="d-inline-block">For Poors</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="Ui.Forms.Validation.html">
-                                    <i class="simple-icon-check"></i> <span class="d-inline-block">For Medicals</span>
+                                    <i class="iconsminds-clinic"></i> <span class="d-inline-block">For Medicals</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="Ui.Forms.Wizard.html">
-                                    <i class="simple-icon-magic-wand"></i> <span class="d-inline-block">Charity Funds</span>
+                                    <i class="iconsminds-wheelchair"></i> <span class="d-inline-block">Charity Funds</span>
                                 </a>
                             </li>
                         </ul>
@@ -162,20 +162,20 @@
                         <ul class="list-unstyled inner-level-menu">
                             <li>
                                 <a href="Ui.Datatables.Rows.html">
-                                    <i class="simple-icon-screen-desktop"></i> <span class="d-inline-block">For Education</span>
+                                    <i class="simple-icon-notebook"></i> <span class="d-inline-block">For Education</span>
                                 </a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a href="Ui.Datatables.Scroll.html">
                                     <i class="simple-icon-mouse"></i> <span class="d-inline-block">For Home</span>
                                 </a>
-                            </li>
-                            <li>
+                            </li> --}}
+                            {{-- <li>
                                 <a href="Ui.Datatables.Pagination.html">
                                     <i class="simple-icon-notebook"></i> <span
                                         class="d-inline-block">For Business</span>
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </li>

@@ -29,14 +29,12 @@
             <div class="dashboard-wrapper">
                 <div class="row">
                     <div class="col-12">
-                        @if (isset($isBureau))
-                            {{ $isBureau }};
-                        @endif
+
                         <h1 class="font-weight-bold">Complete your profile.</h1>
 
                     </div>
                 </div>
-                <form class="dropzone" action="{{ url('/app/bureau/add-request') }}" method="POST">
+                <form action="{{ url('/app/bureau/add-request') }}" method="POST">
                     @csrf
                     <div class="row mb-4">
                         <div class="col-12">
@@ -106,10 +104,12 @@
                                     {{-- Laqabs --}}
                                     <div class="form-group mb-3">
                                         <label>Laqabs </label>
-                                        <select  name="laqab" class="form-control select2-single" data-width="100%">
+                                        <select name="laqab" class="form-control select2-single" data-width="100%">
                                             <option value="0">--Choose--</option>
                                             @foreach ($laqabs as $item)
-                                                <option  @if (isset($isBureau)) {{ $isBureau->laqab_id == $item->id ? 'selected' : '' }} @endif value="{{ $item->id }}">{{ $item->laqab }}</option>
+                                                <option
+                                                    @if (isset($isBureau)) {{ $isBureau->laqab_id == $item->id ? 'selected' : '' }} @endif
+                                                    value="{{ $item->id }}">{{ $item->laqab }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -120,9 +120,11 @@
                                     <div class="form-group mb-3">
                                         <label>Currently Doing<span class="text-danger">*</span></label>
                                         <select name="qualification" class="form-control select2-single" data-width="100%">
-                                            <option  value="0">--Choose--</option>
+                                            <option value="0">--Choose--</option>
                                             @foreach ($qualifications as $item)
-                                                <option  @if (isset($isBureau)) {{ $isBureau->qualification_id == $item->id ? 'selected' : '' }} @endif value="{{ $item->id }}">{{ $item->title }}</option>
+                                                <option
+                                                    @if (isset($isBureau)) {{ $isBureau->qualification_id == $item->id ? 'selected' : '' }} @endif
+                                                    value="{{ $item->id }}">{{ $item->title }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -133,12 +135,16 @@
                                         <label for="exCustomRadio" class="">Gender</label>
                                         <div class="d-flex">
                                             <div class=" mr-2 custom-radio custom-control">
-                                                <input @if (isset($isBureau)) {{ $isBureau->gender == 'Male' ? 'checked' : '' }} @endif type="radio" id="exCustomRadio" value="male" name="gender"
+                                                <input
+                                                    @if (isset($isBureau)) {{ $isBureau->gender == 'Male' ? 'checked' : '' }} @endif
+                                                    type="radio" id="exCustomRadio" value="male" name="gender"
                                                     class="custom-control-input">
                                                 <label class="custom-control-label m-0" for="exCustomRadio">Male</label>
                                             </div>
                                             <div class="custom-radio custom-control">
-                                                <input @if (isset($isBureau)) {{ $isBureau->gender == 'Female' ? 'checked' : '' }} @endif type="radio" id="exCustomRadio2" value="female" name="gender"
+                                                <input
+                                                    @if (isset($isBureau)) {{ $isBureau->gender == 'Female' ? 'checked' : '' }} @endif
+                                                    type="radio" id="exCustomRadio2" value="female" name="gender"
                                                     class="custom-control-input">
                                                 <label class="custom-control-label m-0" for="exCustomRadio2">Female</label>
                                             </div>
@@ -150,9 +156,11 @@
 
                                     <div class="form-group mb-3">
                                         <label for="" class="m-0">Want to add more?</label>
-                                        <textarea rows="3" name="add_more" class="form-control" placeholder="I am currently doing.....">@if (isset($isBureau)) {{ $isBureau->add_more }} @endif
-
-                                        </textarea>
+                                        <textarea rows="3" name="add_more" class="form-control" placeholder="I am currently doing.....">
+@if (isset($isBureau))
+{{ $isBureau->add_more }}
+@endif
+</textarea>
                                     </div>
                                     <div class="form-group mb-3 mt-3">
                                         <button class="btn btn-primary">Request to add</button>

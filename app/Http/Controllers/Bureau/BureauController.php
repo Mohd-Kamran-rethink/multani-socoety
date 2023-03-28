@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Cookie;
 
 class BureauController extends Controller
 {
+    public function landingPage()
+    {
+        return view('MainSite.Bureau.landingPage');
+    }
     public function add()
     {
         $currentUser=People::find(json_decode(Cookie::get('user'))->id );
