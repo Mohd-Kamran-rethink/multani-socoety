@@ -14,9 +14,9 @@ class MainSiteController extends Controller
       
 
       if( Cookie::get('user'))
-        {
+      {
            return redirect('app/dashboard');
-         }
+      }
          
     return view('MainSite.Login.login');
    }

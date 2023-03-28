@@ -17,8 +17,6 @@ class LoginController extends Controller
             'password'=>"required",
         ]);
         $people=People::where('phone','=',$req->phone)->first();
-        return redirect('/app/dashboard')->withCookie('user', $people, 60 * 24 * 365 * 100);
-        // dd($people);
         if(!$people)
         {
             return redirect()->back()->with(['session-message'=>"Your phone number is not registered with us!"]);
