@@ -170,7 +170,7 @@
 
                                 <a href="{{url('')}}" class=" btn btn-primary btn-xs">Womens</a>
                                 <a href="{{url('')}}" class="mx-1 btn btn-primary btn-xs">Mens</a>
-                                <a href="{{url('app/bureau/add-request')}}" class="btn btn-primary btn-xs">Add Yours</a>
+                                <a href="{{url('/app/bureau/add-request')}}" class="btn btn-primary btn-xs">Add Yours</a>
                                 {{-- <a href="{{url('/app/bureau/add-request')}}" class="btn btn-primary btn-xs">Add your's</a> --}}
                             </div>
                         </div>
