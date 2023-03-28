@@ -39,8 +39,8 @@
 
 
     <a class="navbar-logo" href="Dashboard.Default.html">
-        <span class="logo d-none d-xs-block"></span>
-        <span class="logo-mobile d-block d-xs-none"></span>
+        <img width="60" src="{{asset('MainTheme/logos/multanisocietylogo.png')}}" />
+        {{-- <span class="logo-mobile d-block d-xs-none"></span> --}}
     </a>
 
     <div class="navbar-right">
