@@ -163,14 +163,14 @@
                     </div>
                     {{-- button to navigate --}}
                     <section class="card mx-3 mb-4">
-                        <div class="card-body  ">
+                        <div class="card-body  p-3">
 
                             <h4 class="px-2"><b> Search data for:-</b></h4>
-                            <div class="d-flex ">
+                            <div class="d-flex justify-content-between align-items-center">
 
-                                <a href="{{url('')}}" class="mx-1 btn btn-primary btn-xs">Womens</a>
-                                <a href="{{url('')}}" class="mx-1 btn btn-primary btn-xs">Mens</a>
-                                <a href="{{url('/app/bureau/add-request')}}" class="mx-1 btn btn-primary btn-xs">Add you data.</a>
+                                <a href="http://127.0.0.1:8000" class=" btn btn-primary btn-xs">Womens</a>
+                                <a href="http://127.0.0.1:8000" class="mx-1 btn btn-primary btn-xs">Mens</a>
+                                <a href="http://127.0.0.1:8000/app/bureau/add-request" class=" btn btn-primary btn-xs">Add yours</a>
                             </div>
                         </div>
                     </section>
