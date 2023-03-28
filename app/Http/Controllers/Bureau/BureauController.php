@@ -69,6 +69,7 @@ class BureauController extends Controller
         $Bureau->qualification_id=$req->qualification;
         $Bureau->gender=$req->gender;
         $Bureau->laqab_id=$req->laqab;
+        $Bureau->status="Pending";
         $Bureau->add_more=$req->add_more;
         $Bureau->save();
         return redirect('app/bureau/photos/add')->with(["success-msg"=>"Profile Updated please add share you photos"]);
