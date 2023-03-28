@@ -78,7 +78,7 @@
                             <div class="mb-4 card-title">Ooops... looks like an error occurred!</div>
                             <p class="mb-0 text-muted text-small mb-0">Error code</p>
                             <p class="display-1 font-weight-bold mb-5">404</p><a
-                                class="btn btn-primary btn-shadow btn-lg" href="/app">GO BACK HOME</a>
+                                class="btn btn-primary btn-shadow btn-lg" href="/app/login">GO BACK HOME</a>
                         </div>
                     </div>
                 </div>
