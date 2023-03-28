@@ -25,6 +25,7 @@ class Bureaus extends Migration
             $table->string('laqab_id');
             $table->string('add_more')->nullable();
            
+            $table->enum('status',["Approved","Rejected","Pending"])->nullable();
             $table->enum('gender',["Male","Female"]);
             $table->timestamps();
         });

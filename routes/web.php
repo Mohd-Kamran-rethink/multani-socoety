@@ -55,5 +55,6 @@ Route::post('/app/bureau/add-request', [BureauController::class, 'upload'])->nam
 Route::get('/app/bureau/photos/add', [BureauController::class, 'uploadImageForm'])->name('uploadImageForm')->middleware('userCheck');
 Route::post('/app/bureau/photos/add', [BureauController::class, 'uploadImage'])->name('uploadImage')->middleware('userCheck');
 Route::get('/completeProfile/{type}', [BureauController::class, 'completeProfile'])->name('completeProfile')->middleware('userCheck');
+Route::get('/app/bureau/profile/status', [BureauController::class, 'profileStatus'])->name('profileStatus')->middleware('userCheck');
 
                             

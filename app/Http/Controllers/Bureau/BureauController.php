@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Bureau;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Bureau;
+use App\Models\Image;
 use App\Models\Laqab;
 use App\Models\People ;
 use App\Models\State;
 use App\Models\Qualification;
 use Illuminate\Support\Facades\Cookie;
-
+use Illuminate\Support\Facades\DB;
 
 class BureauController extends Controller
 {
@@ -105,6 +106,25 @@ class BureauController extends Controller
         
         // need to delete all images from bureau images
     }
+    
+    public function profileStatus()
+    {
+        $currentUser=People::find(json_decode(Cookie::get('user'))->id );
+        // $BureauData=DB::table('bureaus')
+        //                 ->join('')
+                            
+                            
+
+        $BureauData = Bureau::
+        join('cities', 'bureaus.city_id', '=', 'cities.id')
+        ->join('states', 'bureaus.state_id', '=', 'states.id')
+        ->join('qualifications', 'bureaus.qualification_id', '=', 'qualifications.id')
+        ->select('bureaus.*', 'cities.name as city_name', 'states.name as state_name','qualifications.title as qualification_title')
+        ->where('bureaus.user_id','=',$currentUser->id)->first();
         
+                    
+        $bureauImages=Image::where('user_id','=',$currentUser->id)->get();  
+        return view('MainSite.Bureau.profileStatus',compact('BureauData',"currentUser","bureauImages"));
+    }
     
 }
