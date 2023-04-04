@@ -10,6 +10,8 @@
 
                     <div class="card mb-4">
                         <div class="card-body">
+                            @if($currentUser->bureau_image_type=="new")
+                            {{-- if added other images --}}
                             <div class="glide details">
                                 <div class="glide__track" data-glide-el="track">
                                     <ul class="glide__slides">
@@ -81,6 +83,21 @@
                                             class="simple-icon-arrow-right"></i></button>
                                 </div>
                             </div>
+                            @endif
+                            {{-- if shared profile picture --}}
+                            @if($currentUser->bureau_image_type=="profile")
+                            <div class="glide details">
+                                <div class="glide__track" data-glide-el="track">
+                                    <ul class="glide__slides">
+                                        <li class="glide__slide">
+                                            <img alt="detail" src="{{ asset('MainTheme/img/products/parkin.jpg') }}"
+                                                class="responsive border-0 border-radius img-fluid mb-3" />
+                                        </li>
+                                    </ul>
+                                        
+                                </div>
+                            </div>
+                            @endif
                             <br>
 
                             <h1 class="mb-0"><b>Your Details</b> </h1><br>

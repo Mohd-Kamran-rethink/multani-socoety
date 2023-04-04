@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserApiController\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/getOtp', function (Request $request) {
-    return response()->json(['otp' => 1234], 200, [], JSON_UNESCAPED_UNICODE);
-});
+Route::post('/login',);
+Route::post('/login', [User::class,'login'])->name('login');
+// Route::get('/app/bureau/profile/status', [BureauController::class, 'profileStatus'])->name('profileStatus')->middleware('userCheck');
