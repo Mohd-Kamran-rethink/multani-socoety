@@ -21,6 +21,8 @@ class People extends Migration
             $table->string('education')->nullable();
             $table->string('phone');
             $table->string('password');
+            $table->string('state_id');
+            $table->string('city_id');
             $table->string('email')->nullable();
             $table->string('laqab_id')->nullable();
             $table->enum('is_profile_shared',["Yes","No"])->dfault("No");
