@@ -15,14 +15,14 @@ class People extends Migration
     {
         Schema::create('people', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
+            $table->string('name');
             $table->string('profile_picture')->nullable();
             $table->string('dob')->nullable();
             $table->string('education')->nullable();
             $table->string('phone');
             $table->string('password');
-            $table->string('state_id');
-            $table->string('city_id');
+            $table->string('state_id')->nullable();
+            $table->string('city_id')->nullable();
             $table->string('email')->nullable();
             $table->string('laqab_id')->nullable();
             $table->enum('is_profile_shared',["Yes","No"])->dfault("No");

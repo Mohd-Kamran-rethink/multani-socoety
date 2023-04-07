@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/login',);
+Route::get('/otp', [User::class,'otp'])->name('otp');
 Route::post('/login', [User::class,'login'])->name('login');
 Route::get('/get/register/otp', [User::class,'sendOtp'])->name('sendOtp');
 Route::get('/get/register/form/data/common', [User::class,'getDataRegister'])->name('getDataRegister');
 Route::get('/get/register/form/data/cities', [User::class,'getCities'])->name('getCities');
-Route::post('/register', [User::class,'register'])->name('register');
+Route::post('/user/register', [User::class,'register'])->name('register');
 // Route::get('/app/bureau/profile/status', [BureauController::class, 'profileStatus'])->name('profileStatus')->middleware('userCheck');
